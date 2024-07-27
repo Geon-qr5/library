@@ -1,7 +1,6 @@
 package libraryEx;
 
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 import libraryEx.vo.Member;
 
@@ -12,7 +11,7 @@ public class Application {
 
     public static void main(String[] args) {
         Application app = new Application();
-        int inputNum = 0;
+        int inputNum = 0, memberNo = 0;
 
         while (true) {
             System.out.println("========= MAIN MENU =========");
@@ -27,7 +26,10 @@ public class Application {
             scan.nextLine();
 
             if (inputNum == 1) {
-                System.out.println("로그인");
+                System.out.print("회원번호를 입력하세요. : ");
+                memberNo = scan.nextInt();
+                scan.nextLine();
+                app.login(memberNo);
             } else if (inputNum == 2) {
                 System.out.println("회원가입");
                 app.createMember();
